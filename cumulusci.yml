@@ -1,0 +1,29 @@
+minimum_cumulusci_version: '3.74.0'
+project:
+    name: D2X-Demo
+    package:
+        name: D2X-Demo
+        namespace: d2x
+        api_version: '55.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/D2X-Demo/tests
+            options:
+                outputdir: robot/D2X-Demo/results
+
+    robot_testdoc:
+        options:
+            path: robot/D2X-Demo/tests
+            output: robot/D2X-Demo/doc/D2X-Demo_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
